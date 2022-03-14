@@ -34,7 +34,7 @@
 
       <div class="box-body">
 
-        <table class="table table-bordered table-striped dt-responsive tablas">
+        <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
 
           <thead>
 
@@ -86,7 +86,7 @@
 
             <td>'.$value["compras"].'</td>
 
-            <td>0000-00-00 00:00:00</td>
+            <td>'.$value["ultima_compra"].'</td>
 
             <td>'.$value["fecha"].'</td>
 
@@ -306,6 +306,7 @@ MODAL EDITAR CLIENTE
                 <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
                 <input type="text" class="form-control input-lg" id="editarCliente" name="editarCliente" required>
+                <input type="hidden" id="idCliente" name="idCliente">
 
               </div>
 
@@ -401,7 +402,7 @@ MODAL EDITAR CLIENTE
       <?php
 
         $editarCliente = new ControladorClientes();
-        $editarCliente -> ctrCrearCliente();
+        $editarCliente -> ctrEditarCliente();
 
       ?>
 
@@ -410,3 +411,9 @@ MODAL EDITAR CLIENTE
   </div>
 
 </div>
+<?php
+
+  $eliminarCliente = new ControladorClientes();
+  $eliminarCliente -> ctrEliminarCliente();
+
+?>
